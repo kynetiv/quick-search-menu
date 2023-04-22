@@ -11,7 +11,7 @@ function createServiceInput(key = '', value = '') {
 
   const valueInput = document.createElement('input');
   valueInput.type = 'text';
-  valueInput.placeholder = 'Service URL (use ${TEXT} for the highlighted text)';
+  valueInput.placeholder = 'Service URL (use $TEXT for the highlighted text)';
   valueInput.value = value;
 
   const removeBtn = document.createElement('button');
