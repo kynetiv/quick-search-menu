@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Quick Search Menu",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "kynetiv",
   "description": "A Chrome extension to add a right-click option to use text highlighted to visit a template url that you create from the options page",
   "permissions": [
