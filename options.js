@@ -11,7 +11,7 @@ function createServiceInput(key = '', value = '') {
 
   const valueInput = document.createElement('input');
   valueInput.type = 'text';
-  valueInput.placeholder = 'Service URL (use $TEXT for the highlighted text)';
+  valueInput.placeholder = 'example: https://google.com/search?q=$TEXT';
   valueInput.value = value;
 
   const removeBtn = document.createElement('button');
@@ -56,4 +56,3 @@ saveServicesBtn.addEventListener('click', () => {
     alert('Quick Search Items saved!');
   });
 });
-
