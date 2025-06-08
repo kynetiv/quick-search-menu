@@ -7,24 +7,28 @@
   <body>
     <h1>Quick Search Menu</h1>
     <p>
-      1. Add a Name for your quick search template (must be unique). This wll be used in your right-click option.<br /><br />
-      2. Add a URL and embed the $TEXT special substituion keyword. The $TEXT keyword will later be replaced with your highlighted text.
+      1. Add a Name for your quick search template (must be unique). This will be used in your right-click option.<br /><br />
+      2. Add a URL and embed the $TEXT special substitution keyword. The $TEXT keyword will later be replaced with your highlighted text.
     </p>
-    <form id="servicesForm">
-      <!-- Services will be added here by options.js -->
-    </form>
-    <button id="addService">Add Item</button>
-    <button id="saveServices">Save Item</button>
-    <div id="importExportControls">
+
+    <!-- Import/Export section -->
+    <div class="group-label">Import / Export</div>
+    <div id="importExportControls" class="grouped-buttons">
       <button id="exportBtn">Export</button>
       <button id="importBtn">Import</button>
     </div>
-    
-    <details id="importExportDetails" style="display: none;">
-      <div id="importExportContainer">
-        <textarea id="importExportTextarea" rows="8" placeholder="name1=value1\nname2=value2"></textarea>
-      </div>
-    </details>
-    <script src="options.js"></script>
-  </body>
+
+    <!-- The dynamic form -->
+    <form id="servicesForm">
+      <!-- Services added here by JS -->
+    </form>
+
+    <!-- Add/Save section -->
+    <div id="editControls" class="grouped-buttons">
+      <button id="addService">Add Item</button>
+      <button id="saveServices">Save Item</button>
+    </div>
+
+<script src="options.js"></script>
+</body>
 </html>

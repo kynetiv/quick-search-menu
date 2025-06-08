@@ -10,12 +10,6 @@ h1 {
   margin-bottom: 20px;
 }
 
-label {
-  display: block;
-  margin-top: 10px;
-  color: #4a4a4a;
-}
-
 input[type="text"] {
   width: 100%;
   padding: 8px;
@@ -29,11 +23,7 @@ button {
   border: none;
   color: white;
   padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
   font-size: 14px;
-  margin-top: 10px;
   cursor: pointer;
 }
 
@@ -41,16 +31,20 @@ button:hover {
   background-color: #3d7bcc;
 }
 
-#exportBtn, #importBtn {
-  margin-right: 10px;
+.group-label {
+  font-weight: bold;
+  margin-top: 24px;
+  margin-bottom: 6px;
 }
 
-#importExportContainer {
-  margin-top: 10px;
-}
-
-#importExportTextarea {
-  width: 100%;
-  font-family: monospace;
-  resize: vertical;
+.grouped-buttons {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  gap: 12px;
+  background-color: #f9f9f9;
+  justify-content: flex-start;
+  align-items: center;
 }
