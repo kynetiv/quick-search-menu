@@ -41,3 +41,16 @@ button:hover {
   background-color: #3d7bcc;
 }
 
+#exportBtn, #importBtn {
+  margin-right: 10px;
+}
+
+#importExportContainer {
+  margin-top: 10px;
+}
+
+#importExportTextarea {
+  width: 100%;
+  font-family: monospace;
+  resize: vertical;
+}

@@ -56,3 +56,55 @@ saveServicesBtn.addEventListener('click', () => {
     alert('Quick Search Items saved!');
   });
 });
+
+const importExportDetails = document.getElementById('importExportDetails');
+const importExportTextarea = document.getElementById('importExportTextarea');
+const exportBtn = document.getElementById('exportBtn');
+const importBtn = document.getElementById('importBtn');
+
+// Export current services to textarea
+exportBtn.addEventListener('click', () => {
+  chrome.storage.sync.get('services', (data) => {
+    const services = data.services || {};
+    let exportText = '';
+    for (const key in services) {
+      exportText += `${key}=${services[key]}\n`;
+    }
+
+    importExportTextarea.value = exportText.trim();
+
+    // Show the export/import box
+    importExportDetails.style.display = 'block';
+    importExportDetails.open = true;
+
+    // Select text ready to copy
+    importExportTextarea.focus();
+    importExportTextarea.select();
+  });
+});
+
+// Import from textarea and save
+importBtn.addEventListener('click', () => {
+  // Show textarea before user pastes
+  importExportDetails.style.display = 'block';
+  importExportDetails.open = true;
+  importExportTextarea.focus();
+
+  const lines = importExportTextarea.value.split('\n');
+  const services = {};
+
+  for (const line of lines) {
+    const [key, value] = line.split('=');
+    if (key && value) {
+      services[key.trim()] = value.trim();
+    } else {
+      alert('Invalid format in one or more lines. Please use key=value per line.');
+      return;
+    }
+  }
+
+  chrome.storage.sync.set({ services }, () => {
+    alert('Imported and saved successfully!');
+    location.reload(); // Refresh to show new values
+  });
+});
