@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Quick Search Menu</title>
-    <link rel="stylesheet" href="options.css">
-  </head>
-  <body>
-    <h1>Quick Search Menu</h1>
-    <p>
-      1. Add a Name for your quick search template (must be unique). This will be used in your right-click option.<br /><br />
-      2. Add a URL and embed the $TEXT special substitution keyword. The $TEXT keyword will later be replaced with your highlighted text.
-    </p>
+<head>
+  <title>Quick Search Menu</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <h1>Quick Search Menu</h1>
+  <p>
+    1. Add a Name for your quick search template (must be unique). This will be used in your right-click option.<br /><br />
+    2. Add a URL and embed the $TEXT special substitution keyword. The $TEXT keyword will later be replaced with your highlighted text.
+  </p>
 
-    <!-- Import/Export section -->
-    <div class="group-label">Import / Export</div>
-    <div id="importExportControls" class="grouped-buttons">
-      <button id="exportBtn">Export</button>
-      <button id="importBtn">Import</button>
-    </div>
+  <hr />
 
-    <!-- The dynamic form -->
-    <form id="servicesForm">
-      <!-- Services added here by JS -->
-    </form>
+  <div id="importExportControls">
+    <button id="exportBtn">Export</button>
+    <button id="importBtn">Import</button>
+    <button id="confirmImportBtn" style="display:none; margin-left: 8px;">Confirm Import</button>
+  </div>
 
-    <!-- Add/Save section -->
-    <div id="editControls" class="grouped-buttons">
-      <button id="addService">Add Item</button>
-      <button id="saveServices">Save Item</button>
-    </div>
+  <details id="importExportBox" style="margin-top: 10px; display: none;">
+    <summary>Edit Import/Export Text</summary>
+    <textarea id="importExportTextarea" rows="10"></textarea>
+  </details>
 
-<script src="options.js"></script>
+  <hr />
+
+  <form id="servicesForm">
+    <!-- Services will be added here by options.js -->
+  </form>
+
+  <hr />
+
+  <div id="bottomControls">
+    <button id="addService">Add Item</button>
+    <button id="saveServices">Save</button>
+  </div>
+
+  <script src="options.js"></script>
 </body>
 </html>
